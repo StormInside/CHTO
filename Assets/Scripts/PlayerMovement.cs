@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -24,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("player speed = "+ speed);
+        // Debug.Log("player speed = "+ speed);
         transform.position = Vector2.MoveTowards(transform.position, vc, Time.deltaTime * speed);
 
         if (transform.position.x == posOne && vc.x != posTwo)

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class PlayerStopButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class PlayerSpeedButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     public UnityEvent ChangePlayerSpeed, RestorePlayerSpeed;
