@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     
     public float bulet_speed = 2f;
+    public float damage = 1;
 
     private void Update()
     {
@@ -13,7 +14,11 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo) {
-        Debug.Log(hitInfo.name);
+        Asteroid asteroid = hitInfo.GetComponent<Asteroid>();
+        if (asteroid != null)
+        {
+            asteroid.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }
