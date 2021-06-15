@@ -4,29 +4,60 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Transform posOne;
-    public Transform posTwo;
-    public float speedX;
-    public Vector2 vc;
+    private float posOne = 2.3f;
+    private float posTwo = -2.3f;
+
+    private float speed;
+    public float default_speed = 5f;
+
+    private bool holding;
+
+    private Vector2 vc;
+
+
     private void Start()
     {
-        vc = new Vector2(posOne.position.x, posOne.position.y);
+        speed = default_speed;
+        vc = new Vector2(posOne, 0);
     }
 
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, vc, Time.deltaTime * speedX);
-        if (transform.position == posOne.position && vc.x != posTwo.position.x)
+        Debug.Log("player speed = "+ speed);
+        transform.position = Vector2.MoveTowards(transform.position, vc, Time.deltaTime * speed);
+
+        if (transform.position.x == posOne && vc.x != posTwo)
         {
 
-            vc.x = posTwo.position.x;
+            vc.x = posTwo;
         }
-        else if (transform.position == posTwo.position && vc.x == posTwo.position.x)
+        else if (transform.position.x == posTwo && vc.x != posOne)
         {
-            vc.x = posOne.position.x;
+            vc.x = posOne;
         }
 
+    }
+
+    public void slowDownPlayer() {
+        if (!holding) {
+            speed = speed / 2;
+            holding = true;
+        }
+    }
+    public void speedUpPlayer()
+    {
+        if (!holding)
+        {
+            speed = speed * 2;
+            holding = true;
+        }
+    }
+
+    public void restorePlayerSpeed()
+    {
+        holding = false;
+        speed = default_speed;
     }
 
 
