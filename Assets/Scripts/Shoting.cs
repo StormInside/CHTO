@@ -5,12 +5,12 @@ using UnityEngine;
 public class Shoting : MonoBehaviour
 {
 
-    public float shoting_speed = 1f;
+    public float shoting_speed = 1;
     public GameObject bullet;
     public Transform firePoint;
 
     private void Start() {
-        InvokeRepeating("Shoot", 1f, shoting_speed);
+        InvokeRepeating("Shoot", 1, shoting_speed);
     }
 
     private void Update()
@@ -20,7 +20,7 @@ public class Shoting : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Shot");
+        // Debug.Log("Shot");
         Instantiate(bullet, new Vector2(firePoint.position.x, firePoint.position.y), Quaternion.identity);
     }
 }
