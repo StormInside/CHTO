@@ -22,7 +22,7 @@ public class main : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("spawnAsteroids", 1, spawn_speed);
+        InvokeRepeating("spawnAsteroids", 1, 1/spawn_speed);
 
     }
 

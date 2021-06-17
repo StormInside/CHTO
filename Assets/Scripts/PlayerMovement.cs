@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void slowDownPlayer() {
         if (!holding) {
-            speed = speed / 2;
+            speed = speed / 3;
             holding = true;
         }
     }
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!holding)
         {
-            speed = speed * 2;
+            speed = speed * 3;
             holding = true;
         }
     }

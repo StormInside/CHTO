@@ -100,6 +100,8 @@ MonoBehaviour:
   health: 1
   xp: 100
   scale_counter: 1
+  move_speed: 5
+  rotation_speed: 5
 --- !u!50 &3381464782114915414
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +133,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
