@@ -12,7 +12,7 @@ public class Shoting : MonoBehaviour
     private bool is_shoting = false;
 
     private void Start() {
-        InvokeRepeating("Shoot", 2, 1/shoting_speed);
+        InvokeRepeating("Shoot", 1, 1/shoting_speed);
         
     }
 

@@ -50,10 +50,7 @@ public class Asteroid : MonoBehaviour
     }
 
     private void CheckPosition(){
-        if (transform.position.x >= 10 | 
-            transform.position.x <= -10 | 
-            transform.position.y >= 10 | 
-            transform.position.y <= -3){
+        if (transform.position.y <= -3){
                 Destroy(gameObject);
             }
     }
