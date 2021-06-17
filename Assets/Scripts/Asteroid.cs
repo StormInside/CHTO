@@ -19,8 +19,15 @@ public class Asteroid : MonoBehaviour
     {
         transform.localScale = transform.localScale * scale_counter;
 
-        var move_x = Random.Range(-1.0f, 1.0f);
-        var move_y = -10.0f;
+        float move_x = 0;
+
+        if (transform.position.x >= 0){
+            move_x = Random.Range(-10.0f, 5);
+        }else{
+            move_x = Random.Range(5, 10);
+        }
+        
+        float move_y = -10.0f;
 
         move_position = new Vector2(move_x, move_y);
 
@@ -55,7 +62,8 @@ public class Asteroid : MonoBehaviour
         PlayerMovement palyer = hitInfo.GetComponent<PlayerMovement>();
         if (palyer != null)
         {
-            Debug.Log("GAME END");
+            // StartCoroutine(palyer.TakeDamage());
+            Debug.Log("Damage Player");
         }
         Destroy(gameObject);
     }

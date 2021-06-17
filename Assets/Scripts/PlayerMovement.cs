@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         // Debug.Log("player speed = "+ speed);
         transform.position = Vector2.MoveTowards(transform.position, vc, Time.deltaTime * speed);
@@ -58,5 +59,13 @@ public class PlayerMovement : MonoBehaviour
         speed = default_speed;
     }
 
+    // public IEnumerator TakeDamage(){
+    //     Debug.Log("Start");
+    //     var old_color = transform.GetComponent<SpriteRenderer> ().color;
+    //     transform.GetComponent<SpriteRenderer> ().color = Color.red;
+    //     yield return new WaitForSeconds(2);
+    //     transform.GetComponent<SpriteRenderer> ().color = old_color;
+    //     Debug.Log("End");
+    // }
 
 }
