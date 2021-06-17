@@ -33,7 +33,7 @@ public class main : MonoBehaviour
 
     private void spawnAsteroids()
     {   
-        var spawn_x = Random.Range(-10.0f, 10.0f);
+        var spawn_x = Random.Range(-5.0f, 5.0f);
         var spawn_y = Random.Range(9, 10);
 
         var rotation = Random.Range(0, 360);
