@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!holding)
         {
-            speed = speed * 3;
+            speed = speed * 2;
             holding = true;
         }
     }

@@ -16,16 +16,24 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo) {
         Asteroid asteroid = hitInfo.GetComponent<Asteroid>();
+        EnemyMovement enemy = hitInfo.GetComponent<EnemyMovement>();
+        PlayerMovement player = hitInfo.GetComponent<PlayerMovement>();
         if (asteroid != null)
         {
             asteroid.TakeDamage(damage);
+        }else if (enemy != null){
+            enemy.TakeDamage(damage);
+        }else if (player != null){
+            // player.TakeDamage(damage);
+            
         }
         Destroy(gameObject);
     }
 
     private void CheckPosition(){
-        if (transform.position.y >= 8){
+        if (transform.position.y <= -3){
                 Destroy(gameObject);
             }
     }
+
 }
