@@ -9,7 +9,8 @@ public class Shoting : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
 
-    private bool is_shoting = false;
+    public bool is_shoting = false;
+
 
     private void Start() {
         InvokeRepeating("Shoot", 1, 1/shoting_speed);
